@@ -1,0 +1,29 @@
+<h1>Get и Post запросы</h1>
+
+{% if show == True %}
+<h2>{{ name }} {{ surname }}</h2>
+{% else %}
+<h2>Имя и Фамилия скрыты</h2>
+{% endif %}
+
+<a href="?name=Adilet&surname=Kasymbaev&show=False">
+    Скрыть имя фамилию
+</a>
+<a href="?name=Adilet&surname=Kasymbaev&show=True">
+    Показать имя фамилию
+</a>
+
+    <!-- <form action="" method="get">
+        <input type="text" name="name">
+        <input type="text" name="surname">
+        <button type="submit">Отправить</button>
+    </form> -->
+
+<h2>Ваш логин и пароль: {{ login }} - {{ password }}</h2>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <input type="text" name="login">
+    <input type="text" name="password">
+    <button type="submit">Отправить</button>
+</form>

@@ -8,3 +8,44 @@ def students_page(request, test):
 
 def date_page(request, date):
     return render(request, "thrid.html", {'date':date})
+
+# Внутри request.GET хранятся все параметры GET - запроса в виде dict
+def test_page(request):
+    name = request.GET.get('name')
+    surname = request.GET.get('surname')
+    show = request.GET.get('show')
+
+    if show == "True": 
+        show == True
+    else: 
+        show == False
+
+    print(show)
+
+    login = request.POST.get('login')
+    password = request.POST.get('password')
+
+    context = {
+        'name': name,
+        'surname': surname,
+        'show': show,
+        'login': login,
+        'password': password
+    }
+
+    return render(request, "test.html", context)
+
+def task(request):
+    name = request.POST.get('name')
+    surname = request.POST.get('surname')
+    date = request.POST.get('date')
+    film = request.POST.get('film')
+
+    context = {
+        'name': name,
+        'surname': surname,
+        'date': date,
+        'film': film
+    }
+
+    return render(request, "task.html", context)

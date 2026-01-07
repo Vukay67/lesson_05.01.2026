@@ -1,0 +1,19 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <input placeholder="Введите имя" type="text" name="name">
+    <input placeholder="Введите фамилию" type="text" name="surname">
+    <input placeholder="Введите дату раждение" type="date" name="date">
+    <input placeholder="Введите любимый фильм" type="text" name="film">
+    <button type="submit">Отправить</button>
+</form>
+
+<h3>
+    Имя: {{ name }}
+    <br>
+    Фамилия: {{ surname }}
+    <br>
+    Дата рождение: {{ date }}
+    <br> 
+    Любимый фильм: {{ film }}
+
+</h3>
